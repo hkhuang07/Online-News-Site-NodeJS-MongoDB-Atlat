@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="Trang tin điện tử nhiều người xem nhất vũ trụ." />
+	<meta name="author" content="Nguyễn Hoàng Tùng" />
+	<title><%= title %> - Trang tin điện tử</title>
+	<link href="http://127.0.0.1:3000/css/app.css" rel="stylesheet" />
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-light bg-white absolute-top">
+			<div class="container">
+				<button class="navbar-toggler order-2 order-md-1" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbar-left navbar-right" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse order-3 order-md-2" id="navbar-left">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle" href="#" id="chuyenmuc" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chuyên mục</a>
+							<div class="dropdown-menu" aria-labelledby="chuyenmuc">
+								<% if(typeof chuyenmuc !== "undefined") { chuyenmuc.forEach(cd => { %>
+									<a class="dropdown-item" href="/baiviet/chude/<%= cd._id %>"><%= cd.TenChuDe %></a>
+								<% }); } %>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<a class="navbar-brand mx-auto order-1 order-md-3" href="/">iNews</a>
+				<div class="collapse navbar-collapse order-4 order-md-4" id="navbar-right">
+					<ul class="navbar-nav ms-auto">
+						<% if(typeof session === "undefined" || !session.MaNguoiDung) { %>
+							<li class="nav-item">
+								<a class="nav-link" href="/dangky">Đăng ký</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/dangnhap">Đăng nhập</a>
+							</li>
+						<% } else { %>
+							<li class="nav-item">
+								<a class="nav-link" href="/admin">Quản lý</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/dangxuat">Đăng xuất</a>
+							</li>
+						<% } %>
+					</ul>
+					<form class="form-inline" role="search" action="/timkiem" method="post">
+						<input name="tukhoa" class="search js-search form-control form-control-rounded me-sm-2" type="text" value="<%= (typeof tukhoa !== "undefined") ? tukhoa : '' %>" placeholder="Tìm kiếm..." aria-label="Search" />
+					</form>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main class="main pt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="text-center">
+                        <h3>Kết quả tìm kiếm</h3>
+                        <hr />
+                    </div>
+                    <article class="card mb-4">
+                        <header class="card-header px-0">
+                            <div class="card-meta">
+                                <a href="#"><time class="timeago" datetime="2021-09-26 20:00"></time></a> thuộc <a href="page-category.html">Journey</a>
+                            </div>
+                            <a href="post-image.html">
+                                <h4 class="card-title">How can we sing about love?</h4>
+                            </a>
+                        </header>
+                        <div class="card-body px-0 pt-0">
+                            <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
+                        </div>
+                    </article>
+                    <article class="card mb-4">
+                        <header class="card-header px-0">
+                            <div class="card-meta">
+                                <a href="#"><time class="timeago" datetime="2021-09-03 20:00"></time></a> thuộc <a href="page-category.html">Lifestyle</a>
+                            </div>
+                            <a href="post-image.html">
+                                <h4 class="card-title">Oh, I guess they have the blues</h4>
+                            </a>
+                        </header>
+                        <div class="card-body px-0 pt-0">
+                            <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
+                        </div>
+                    </article>
+                    <article class="card mb-4">
+                        <header class="card-header px-0">
+                            <div class="card-meta">
+                                <a href="#"><time class="timeago" datetime="2021-07-16 20:00"></time></a> thuộc <a href="page-category.html">Work</a>
+                            </div>
+                            <a href="post-image.html">
+                                <h4 class="card-title">How can we, how can we sing about ourselves?</h4>
+                            </a>
+                        </header>
+                        <div class="card-body px-0 pt-0">
+                            <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
+                        </div>
+                    </article>
+                    <article class="card mb-4">
+                        <header class="card-header px-0">
+                            <div class="card-meta">
+                                <a href="#"><time class="timeago" datetime="2021-09-15 20:00"></time></a> thuộc <a href="page-category.html">Lifestyle</a>
+                            </div>
+                            <a href="post-image.html">
+                                <h4 class="card-title">The king is made of paper</h4>
+                            </a>
+                        </header>
+                        <div class="card-body px-0 pt-0">
+                            <p class="card-text">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
+                        </div>
+                    </article>
+					
+					<div class="alert alert-primary" role="alert">
+						<h4 class="alert-heading">Rất tiếc!</h4>
+						<p>Không có bài viết nào trong chuyên mục này.</p>
+						<hr>
+						<div class="btn-list">
+							<a class="btn btn-primary" type="button" href="/">Về trang chủ</a>
+						</div>
+					</div>
+					
+					<nav>
+						<ul class="pagination justify-content-center">
+							<li class="page-item disabled">
+								<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Về trước</a>
+							</li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#">Về sau</a>
+							</li>
+						</ul>
+					</nav>
+                </div>
+				<div class="col-md-3 ms-auto">
+					<aside class="sidebar">
+						<div class="card mb-4">
+							<div class="card-body">
+								<h4 class="card-title">Giới thiệu</h4>
+								<p class="card-text">Đọc tin tức trên trang web này sẽ giúp bạn có cái nhìn khách quan về cuộc sống. Đừng quên chia sẻ trang này cho toàn bộ vũ trụ biết nhé. Mến yêu.</p>
+							</div>
+						</div>
+					</aside>
+					<aside class="sidebar sidebar-sticky">
+						<div class="card mb-4">
+							<div class="card-body">
+								<h4 class="card-title">Thẻ</h4>
+								<% if(typeof chuyenmuc !== "undefined") { chuyenmuc.forEach(cd => { %>
+									<a class="btn btn-light btn-sm mb-1" href="/baiviet/chude/<%= cd._id %>"><%= cd.TenChuDe %></a>
+								<% }); } %>
+							</div>
+						</div>
+						<div class="card mb-4">
+							<div class="card-body">
+								<h4 class="card-title">Xem nhiều nhất</h4>
+								<% if(typeof xemnhieunhat !== "undefined") { xemnhieunhat.forEach(bv => { %>
+									<a href="/baiviet/chitiet/<%= bv._id %>" class="d-inline-block mt-3">
+										<h4 class="h6"><%= bv.TieuDe %></h4>
+										<img class="card-img" src="<%- firstImage(bv.NoiDung) %>" alt="" />
+									</a>
+									<time class="timeago" datetime="<%= bv.NgayDang %>"></time> thuộc <%= bv.ChuDe.TenChuDe %>
+								<% }); } %>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="site-newsletter">
+		<div class="container">
+			<div class="text-center">
+				<h3 class="h4 mb-2">Đăng ký nhận tin mới nhất</h3>
+				<p class="text-muted">Tham gia bản tin hàng tháng của chúng tôi và không bao giờ bỏ lỡ những câu chuyện mới.</p>
+				<div class="row">
+					<div class="col-xs-12 col-sm-9 col-md-7 col-lg-5 ms-auto me-auto">
+						<div class="input-group mb-3 mt-3">
+							<input type="text" class="form-control" placeholder="Địa chỉ Email" aria-label="Email address" />
+							<span class="input-group-btn">
+								<button class="btn btn-secondary" type="button">Đăng ký</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-instagram">
+		<div class="action">
+			<a class="btn btn-light" href="#">
+				Theo dõi chúng tôi @ Instagram
+			</a>
+		</div>
+		<div class="row g-0">
+			<div class="col-sm-6">
+				<div class="row g-0">
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/1.jpg" alt="" /></a></div>
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/2.jpg" alt="" /></a></div>
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/3.jpg" alt="" /></a></div>
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/4.jpg" alt="" /></a></div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="row g-0">
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/5.jpg" alt="" /></a></div>
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/6.jpg" alt="" /></a></div>
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/7.jpg" alt="" /></a></div>
+					<div class="col-3"><a class="photo" href="#"><img class="img-fluid" src="http://127.0.0.1:3000/images/instagram/8.jpg" alt="" /></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="site-footer bg-dark">
+		<div class="container">
+			<ul class="nav justify-content-center">
+				<li class="nav-item"><a class="nav-link" href="#">Chính sách riêng tư</a></li>
+				<li class="nav-item"><a class="nav-link" href="/dangky">Đăng ký</a></li>
+				<li class="nav-item"><a class="nav-link" href="/dangnhap">Đăng nhập</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+			</ul>
+			<div class="copy">
+				Bản quyền &copy; 2025 bởi Tên của bạn.
+			</div>
+		</div>
+	</footer>
+	<script src="http://127.0.0.1:3000/js/app.js"></script>
+</body>
+</html>

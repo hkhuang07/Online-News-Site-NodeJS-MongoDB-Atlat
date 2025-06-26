@@ -10,7 +10,7 @@ var chudeRouter = require('./routers/chude');
 var taikhoanRouter = require('./routers/taikhoan');
 var baivietRouter = require('./routers/baiviet');
 
-var uri = 'mongodb+srv://huykyunhk:HuyKyunH.K07@cluster0.17bgl.mongodb.net/trangtin';
+var uri = '<MY-URI>';
 mongoose.connect(uri).catch(err => console.log(err));
 
 app.set('views', './views');

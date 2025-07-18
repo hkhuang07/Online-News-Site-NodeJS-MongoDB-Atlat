@@ -80,7 +80,7 @@ To get the iNews news portal up and running on your local machine for developmen
     * **Obtain Your Connection String:** Ensure you have your MongoDB Atlas connection string readily available. This string typically starts with `mongodb+srv://` and includes your cluster details, username, and password.
     * **Update `index.js` (for local development):** In your `index.js` file, locate the `mongoose.connect` line. For local testing, you might find the connection string directly embedded:
         ```javascript
-        var uri = 'mongodb+srv://huykyunhk:HuyKyunH.K07@cluster0.17bgl.mongodb.net/trangtin';
+        var uri = '[YOUR-PROJECT-URI]';
         mongoose.connect(uri).catch(err => console.log(err));
         ```
         **Important:** While this works for local development, it is **highly recommended to use environment variables** for your MongoDB Atlas connection string in a production environment for security reasons. For local testing, you can temporarily replace the placeholder `uri` with your actual MongoDB Atlas connection string.

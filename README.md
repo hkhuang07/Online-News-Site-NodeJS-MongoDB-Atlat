@@ -11,6 +11,7 @@ Welcome to **iNews**, a robust and feature-rich online news portal meticulously 
 
 https://online-news-website-nodejs-mongodb-atlat.onrender.com
 
+---
 ## Visual Setup Guide
 
 ### Home Page

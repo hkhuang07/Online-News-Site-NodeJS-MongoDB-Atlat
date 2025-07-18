@@ -7,6 +7,9 @@
 Welcome to **iNews**, a robust and feature-rich online news portal meticulously crafted using **Node.js** as its powerful backend framework and **MongoDB Atlas** for its scalable and cloud-hosted NoSQL database. This project serves as a comprehensive platform for the aggregation, management, and display of news articles, offering a dynamic and engaging experience for both content creators and readers. Built upon the popular Express.js framework for efficient routing, EJS for dynamic server-side rendering, and leveraging MongoDB Atlas for data persistence, iNews exemplifies a full-stack JavaScript application designed for modern web environments. It aims to provide users with a seamless experience for Browse current events, categorized content, and administrative tools for content management.
 
 ---
+##Link Deploy
+
+https://online-news-website-nodejs-mongodb-atlat.onrender.com
 
 ## Core Features
 

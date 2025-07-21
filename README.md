@@ -17,9 +17,6 @@ https://online-news-website-nodejs-mongodb-atlat.onrender.com
 ### Home Page
 <p align="center">
   <img src="demo/online_news.jpg" alt="Home Page Onlines News" width="900">
-  </br>
-</p>
-<p align="center">
   <img src="demo/online_news01.jpg" alt="Home Page Onlines News" width="900">
   </br>
   <em>Home Page Onlines News</em>
